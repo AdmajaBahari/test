@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang=\"id\">
+<head>
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <meta name=\"theme-color\" content=\"#0a0a0a\" />
+  <meta name=\"description\" content=\"Daftar sebagai anggota Tech Community — isi formulir singkat untuk bergabung.\" />
+  <title>Daftar — Tech Community</title>
+
+  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />
+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />
+  <link href=\"https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\" />
+  <link rel=\"stylesheet\" href=\"css/styles.css\" />
+</head>
+<body data-page=\"form\">
+
+  <header class=\"nav\" data-testid=\"site-nav\">
+    <div class=\"nav-inner\">
+      <a href=\"index.html\" class=\"brand\" data-testid=\"brand-home\">
+        <span class=\"brand-mark\"></span>
+        <span>Tech Community</span>
+      </a>
+      <nav class=\"nav-links\" aria-label=\"Main\">
+        <a href=\"index.html\" class=\"nav-link\" data-testid=\"nav-home\">Beranda</a>
+        <a href=\"form.html\" class=\"nav-link\" data-testid=\"nav-form\">Daftar</a>
+        <a href=\"gallery.html\" class=\"nav-link\" data-testid=\"nav-gallery\">Galeri</a>
+        <a href=\"index.html\" class=\"nav-cta hide-mobile\" data-testid=\"nav-cta\">← Kembali</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class=\"form-shell\">
+    <!-- LEFT: editorial side -->
+    <aside class=\"form-side\">
+      <div>
+        <div class=\"mono reveal reveal-1\" style=\"color: var(--fg-subtle); margin-bottom: 28px;\">[ FORMULIR PENDAFTARAN — 01 / 01 ]</div>
+        <h1 class=\"reveal reveal-2\">Mari <em>berkenalan,</em><br/>satu nama dulu.</h1>
+        <p class=\"lead reveal reveal-3\">
+          Pendaftaran ini adalah langkah pertama untuk masuk ke direktori anggota Tech Community.
+          Tidak ada biaya, tidak ada syarat tersembunyi — hanya komitmen untuk belajar bersama.
+        </p>
+      </div>
+
+      <ol class=\"reveal reveal-4\">
+        <li><span>01</span> Isi nama, email, dan bidang minatmu.</li>
+        <li><span>02</span> Datamu akan tampil di halaman beranda.</li>
+        <li><span>03</span> Datang ke pertemuan pertama kami.</li>
+      </ol>
+
+      <div class=\"mono\" style=\"color: var(--fg-subtle); margin-top: 48px;\">
+        Kembali ke <a href=\"index.html\" data-testid=\"back-home\" style=\"color: var(--fg); text-decoration: underline;\">beranda</a>
+      </div>
+    </aside>
+
+    <!-- RIGHT: form -->
+    <section class=\"form-main\">
+      <div class=\"form-card\">
+        <h2 class=\"reveal reveal-1\">Daftar sekarang.</h2>
+        <p class=\"sub reveal reveal-2\">Hanya butuh 30 detik. Datamu disimpan lokal di perangkatmu.</p>
+
+        <form id=\"register-form\" novalidate data-testid=\"register-form\" class=\"reveal reveal-3\">
+          <div class=\"field\">
+            <label for=\"name\">Nama lengkap</label>
+            <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"cth. Aulia Pramesti\" autocomplete=\"name\" data-testid=\"input-name\" required />
+            <span class=\"error\" data-error=\"name\"></span>
+          </div>
+
+          <div class=\"field\">
+            <label for=\"email\">Email</label>
+            <input id=\"email\" name=\"email\" type=\"email\" placeholder=\"kamu@email.com\" autocomplete=\"email\" data-testid=\"input-email\" required />
+            <span class=\"error\" data-error=\"email\"></span>
+          </div>
+
+          <div class=\"field\">
+            <label for=\"field\">Bidang minat</label>
+            <select id=\"field\" name=\"field\" data-testid=\"select-field\" required>
+              <option value=\"\" disabled selected>Pilih salah satu…</option>
+              <option value=\"Frontend\">Frontend Development</option>
+              <option value=\"Backend\">Backend Development</option>
+              <option value=\"Mobile\">Mobile Development</option>
+              <option value=\"UI / UX\">UI / UX Design</option>
+              <option value=\"Data / AI\">Data & AI</option>
+              <option value=\"DevOps\">DevOps & Cloud</option>
+            </select>
+            <span class=\"error\" data-error=\"field\"></span>
+          </div>
+
+          <div class=\"form-actions\">
+            <button type=\"submit\" class=\"btn btn-primary\" data-testid=\"submit-form\">Kirim pendaftaran <span class=\"arrow\">→</span></button>
+            <a href=\"index.html\" class=\"btn-ghost btn\" data-testid=\"cancel-form\">Batal</a>
+          </div>
+        </form>
+
+        <div id=\"preview\" data-testid=\"form-preview\" style=\"display:none; margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line);\"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TOAST -->
+  <div id=\"toast\" class=\"toast\" role=\"status\" data-testid=\"toast\" aria-live=\"polite\">
+    <div style=\"margin-top: 2px;\">
+      <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 13l4 4L19 7\"/></svg>
+    </div>
+    <div>
+      <div class=\"toast-title\">Berhasil</div>
+      <div class=\"toast-body\"></div>
+    </div>
+  </div>
+
+  <a id=\"emergent-badge\" target=\"_blank\" href=\"https://app.emergent.sh/?utm_source=emergent-badge\"
+     style=\"display:inline-flex !important;box-sizing:border-box;width:178px;height:40px;padding:8px 12px;align-items:center !important;gap:8px;border-radius:50px !important;background:#000 !important;position:fixed !important;bottom:16px;right:16px;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif !important;font-size:12px !important;z-index:9999 !important;\">
+    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\">
+      <path d=\"M15.5702 8.13142C15.7729 8.0412 16.0007 8.18878 15.9892 8.4103C15.8374 11.3192 14.0965 14.0405 11.2531 15.3065C8.40964 16.5725 5.2224 16.0453 2.95912 14.2117C2.78676 14.072 2.82955 13.804 3.03219 13.7137L4.95677 12.8568C5.04866 12.8159 5.15446 12.823 5.24204 12.8725C6.73377 13.7153 8.59176 13.8649 10.2772 13.1145C11.9626 12.3641 13.0947 10.8833 13.4665 9.21075C13.4883 9.11256 13.5539 9.02918 13.6457 8.98827L15.5702 8.13142Z\" fill=\"white\"/>
+      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3066 4.74698L15.5067 5.19653C15.5759 5.35178 15.5061 5.53366 15.3508 5.60278L1.29992 11.8586C1.14467 11.9278 0.962794 11.8579 0.893675 11.7027L0.701732 11.2716L0.693457 11.2531C-1.10317 7.21778 0.711626 2.49007 4.74692 0.693443C8.78221 -1.10318 13.51 0.711693 15.3066 4.74698ZM2.82356 8.55367C2.63552 8.63739 2.41991 8.51617 2.40853 8.31065C2.28373 6.05724 3.53858 3.85787 5.72286 2.88536C7.90715 1.91286 10.3813 2.45199 11.9724 4.05256C12.1175 4.19854 12.0633 4.43988 11.8753 4.5236L2.82356 8.55367Z\" fill=\"white\"/>
+    </svg>
+    <p style=\"color:#FFF !important;font-family:'Inter',sans-serif !important;font-size:13px !important;font-weight:600 !important;line-height:20px !important;margin:0 !important;white-space:nowrap !important;\">Made with Emergent</p>
+  </a>
+
+  <script src=\"js/app.js\"></script>
+  <script src=\"js/form.js\"></script>
+</body>
+</html>
